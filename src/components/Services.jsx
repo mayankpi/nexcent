@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+import { fadeIn } from "../variants.js";
 const Services = () => {
     const services = [
         {
@@ -316,15 +318,21 @@ const Services = () => {
             className="md:px-14 px-4 py-16 max-w-screen-2xl mx-auto"
             id="services"
         >
-            <div className="text-center my-8">
-                <h2 className="text-4xl text-neutralDGray font-semibold mb-2">
+            <motion.div
+                variants={fadeIn("up", 0.2)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: false, amount: 0.7 }}
+                className="text-center my-8"
+            >
+                <motion.h2 className="text-4xl text-neutralDGray font-semibold mb-2">
                     Our Clients
-                </h2>
-                <p className="text-neutralGray">
+                </motion.h2>
+                <motion.p className="text-neutralGray">
                     We have been working with some Forture 500+ clients
-                </p>
+                </motion.p>
 
-                <div className="my-12 flex flex-wrap justify-between items-center gap-8">
+                <motion.div className="my-12 flex flex-wrap justify-between items-center gap-8">
                     <svg
                         width="85"
                         height="24"
@@ -408,17 +416,29 @@ const Services = () => {
                             <path d="M52.2 17.2c-.6-.8-4-.4-5.5-.2-.5 0-.5-.3-.1-.6 2.7-2 7.1-1.4 7.6-.7.5.6-.1 5.1-2.7 7.3-.3.3-.7.1-.5-.3.5-1.4 1.8-4.7 1.2-5.5M46.8 2.7V.8a.5.5 0 01.5-.4h8.2c.3 0 .5.2.5.4v1.6c0 .3-.2.7-.6 1.2L51 10a9 9 0 014.7 1c.3.2.4.5.5.7v2c0 .3-.3.6-.6.5a9.3 9.3 0 00-8.8 0c-.3.1-.6-.2-.6-.4v-2c0-.3 0-.8.3-1.3l5-7.2h-4.3a.5.5 0 01-.5-.5m-30 11.8h-2.5a.5.5 0 01-.5-.5V1c0-.3.2-.5.5-.5h2.3c.3 0 .5.2.5.4v1.8C17.7.9 19 0 20.4 0c1.6 0 2.6.8 3.3 2.5A3.6 3.6 0 0127 0c1.1 0 2.2.5 3 1.5.7 1 .6 2.7.6 4V14a.5.5 0 01-.5.5h-2.5a.5.5 0 01-.5-.5V7 4.5c-.2-.8-.8-1-1.5-1-.6 0-1.3.3-1.5 1-.3.7-.2 1.8-.2 2.5v7a.5.5 0 01-.5.5H21a.5.5 0 01-.5-.5V7c0-1.5.3-3.6-1.5-3.6s-1.8 2-1.8 3.6v7a.5.5 0 01-.4.5M63 0c3.7 0 5.7 3.3 5.7 7.4 0 4-2.2 7.2-5.7 7.2-3.7 0-5.7-3.2-5.7-7.3s2-7.3 5.7-7.3m0 2.7c-1.8 0-2 2.6-2 4.2s0 5 2 5 2-2.7 2-4.4c0-1.1 0-2.5-.3-3.5s-.9-1.3-1.7-1.3m10.5 11.7h-2.5a.5.5 0 01-.4-.5V.8a.5.5 0 01.5-.4h2.3a.5.5 0 01.4.4v2h.1C74.7 1 75.7 0 77.4 0c1.1 0 2.2.4 3 1.6.6 1 .6 2.8.6 4V14a.5.5 0 01-.5.5H78a.5.5 0 01-.4-.5V7c0-1.4.1-3.5-1.6-3.5-.6 0-1.2.4-1.5 1a6 6 0 00-.4 2.5v7a.5.5 0 01-.4.6M40.3 8.2c0 1 0 1.8-.5 2.7-.4.7-1 1.2-1.7 1.2-1 0-1.6-.8-1.6-1.9 0-2.2 2-2.6 3.8-2.6v.6m2.5 6.2a.5.5 0 01-.6 0c-.8-.6-1-1-1.4-1.6-1.4 1.4-2.4 1.8-4.2 1.8-2.1 0-3.7-1.3-3.7-4 0-2 1-3.4 2.6-4.1 1.4-.6 3.3-.8 4.8-1v-.3c0-.6 0-1.3-.3-1.8s-1-.7-1.5-.7c-1 0-1.8.5-2 1.6 0 .2-.2.4-.4.4l-2.4-.2c-.2 0-.5-.3-.4-.6.5-3 3.2-3.9 5.6-3.9 1.2 0 2.8.3 3.8 1.3 1.2 1.1 1 2.7 1 4.4v4c0 1.2.6 1.7 1 2.4.2.2.2.5 0 .6l-2 1.7M7.5 8.2c0 1 0 1.8-.5 2.7-.4.7-1 1.2-1.7 1.2-1 0-1.5-.8-1.5-1.9 0-2.2 1.9-2.6 3.7-2.6v.6m2.5 6.2a.5.5 0 01-.6 0c-.8-.6-1-1-1.4-1.6-1.4 1.4-2.4 1.8-4.1 1.8-2.1 0-3.8-1.3-3.8-4 0-2 1.1-3.4 2.7-4.1 1.3-.6 3.2-.8 4.7-1v-.3c0-.6 0-1.3-.3-1.8s-1-.7-1.4-.7c-1 0-1.8.5-2 1.6 0 .2-.2.4-.5.4L.8 4.5c-.2-.1-.4-.3-.4-.6C1 1 3.6 0 6 0c1.3 0 2.8.3 3.8 1.3C11 2.4 10.9 4 10.9 5.7v4c0 1.2.5 1.7 1 2.4v.6l-2 1.7"></path>
                         </g>
                     </svg>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
             {/* Services card */}
-            <div className="mt-20 md:w-1/2 mx-auto text-center">
+            <motion.div
+                variants={fadeIn("left", 0.3)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: false, amount: 0.7 }}
+                className="mt-20 md:w-1/2 mx-auto text-center"
+            >
                 <h2 className="text-4xl text-neutralDGray font-semibold mb-2">
                     Manage your entire community in a single system
                 </h2>
                 <p className="text-neutralGray">Who is Nexcent suitable for?</p>
-            </div>
+            </motion.div>
             {/* cards */}
-            <div className="mt-14 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:w-11/12 mx-auto gap-12">
+            <motion.div
+                variants={fadeIn("right", 0.4)}
+                initial="hidden"
+                whileInView={"show"}
+                viewport={{ once: false, amount: 0.7 }}
+                className="mt-14 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:w-11/12 mx-auto gap-12"
+            >
                 {services.map((service) => (
                     <div
                         key={service.id}
@@ -438,7 +458,7 @@ const Services = () => {
                         </div>
                     </div>
                 ))}
-            </div>
+            </motion.div>
         </div>
     );
 };
